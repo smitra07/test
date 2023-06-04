@@ -1,0 +1,14 @@
+---
+- name: scheduling a cronjobs
+  hosts: webservers
+
+  tasks:
+          - name: "##Crontab entry via ansible"
+            cron:
+                    name: "##Crontab entry via ansible"    
+                    minute: "5"
+                    hour: "*"
+                    day: "*"
+                    month: "*"
+                    weekday: "*"
+                    job: "/root/scripts/Sshd.sh"
