@@ -6,9 +6,9 @@
           - name: "##Crontab entry via ansible"
             cron:
                     name: "##Crontab entry via ansible"    
-                    minute: "5"
+                    minute: "*"
                     hour: "*"
                     day: "*"
                     month: "*"
                     weekday: "*"
-                    job: "/root/scripts/Sshd.sh"
+                    job: "/root/scripts/loadtest.sh"
