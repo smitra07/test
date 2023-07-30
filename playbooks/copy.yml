@@ -1,0 +1,13 @@
+---
+- name: copy script
+  hosts: all
+
+  tasks:
+          - name: copying script file
+            become: true
+            copy:
+                    src: /home/smitra/alerts.sh
+                    dest: /tmp
+                    owner: smitra
+                    group: smitra
+                    mode: 0644

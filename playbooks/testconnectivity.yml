@@ -1,0 +1,7 @@
+---
+- name: My First YML file
+  hosts: all
+
+  tasks:
+  - name: "Test connectivity"
+    ping:
