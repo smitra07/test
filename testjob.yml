@@ -1,4 +1,17 @@
 ---
+- name: copy script
+  hosts: webservers
+
+  tasks:
+          - name: copying script file
+            become: true
+            copy:
+                    src: /home/smitra/alerts.sh
+                    dest: /home/smitra/
+                    owner: smitra
+                    group: smitra
+                    mode: 0644
+
 - name: scheduling a cronjobs
   hosts: webservers
 
