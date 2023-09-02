@@ -1,6 +1,6 @@
 ---
-- name: scheduling a cronjobs
-  hosts: webservers
+- name: copy script
+  hosts: 192.168.1.8
 
   tasks:
           - name: copying script file
@@ -8,16 +8,16 @@
             copy:
                     src: /root/scripts/loadtest.sh
                     dest: /root/scripts/
-                    owner: smitra
-                    group: smitra
+                    owner: root
+                    group: root
                     mode: 0644
+
           - name: "##Crontab entry via ansible"
             cron:
-                    name: "##Crontab entry via ansible"    
+                    name: "##Crontab entry via ansible"
                     minute: "*"
                     hour: "*"
                     day: "*"
                     month: "*"
                     weekday: "*"
                     job: "/root/scripts/loadtest.sh"
-
