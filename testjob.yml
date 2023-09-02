@@ -1,6 +1,6 @@
 ---
 - name: copy script
-  hosts: 192.168.1.8
+  hosts: webservers
 
   tasks:
           - name: copying script file
