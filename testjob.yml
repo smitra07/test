@@ -3,15 +3,6 @@
   hosts: webservers
 
   tasks:
-          - name: copying script file
-            become: true
-            copy:
-                    src: /root/scripts/loadtest.sh
-                    dest: /root/scripts/
-                    owner: root
-                    group: root
-                    mode: 0644
-
           - name: "##Crontab entry via ansible"
             cron:
                     name: "##Crontab entry via ansible"
