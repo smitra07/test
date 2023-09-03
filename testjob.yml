@@ -1,11 +1,7 @@
 ---
 - name: copy script
-- hosts: 192.168.0.112
-  tasks:
-  - name: transfer data from machine1 to machine2
-
-    copy:
-     src: /root/scripts/loadtest.sh
-     dest: /root/scripts/
-
-    delegate_to: 192.168.0.114
+- hosts: deployee_system
+  tasks:    
+   - name: Copy Remote-To-Remote
+     synchronize: src=/root/scripts/loadtest.sh dest=/root/scripts/
+     delegate_to: source_system
