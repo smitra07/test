@@ -4,11 +4,11 @@
 
   tasks:
           - name: copying script file
-            become: true
             copy:
                     src: /root/scripts/loadtest.sh
                     dest: /root/scripts/
                     owner: root
                     group: root
                     mode: 0777
-                    remote_src: true
+		                remote_src: true
+		                become: true
