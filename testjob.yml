@@ -4,11 +4,10 @@
 
   tasks:
           - name: copying script file
-            copy:
-                    src: /root/scripts/loadtest.sh
-                    dest: /root/scripts/
-                    owner: root
-                    group: root
-                    mode: 0777
-		    remote_src: true
-		    become: true
+              copy:
+                src: "{{ item.src }}"
+                dest: "{{ item.dest }}"
+                remote_src: true
+              loop:
+                - {src: '/root/scripts/loadtest.sh', dest: '/root/scripts/'}
+              become: true
