@@ -1,7 +1,10 @@
 ---
 - name: copy script
-- hosts: deployee_system
-  tasks:    
-   - name: Copy Remote-To-Remote
-     synchronize: src=/root/scripts/loadtest.sh dest=/root/scripts/
-     delegate_to: source_system
+- hosts: source_system
+  tasks:
+    - name: Transfer file from ServerA to ServerB
+      synchronize:
+        src: /root/scripts/loadtest.sh
+        dest: /root/scripts/
+        mode: pull
+      delegate_to: deployee_system
