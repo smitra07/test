@@ -11,4 +11,4 @@
                     owner: root
                     group: root
                     mode: 0777
-                    remote_src: no
+                    remote_src: true
