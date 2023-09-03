@@ -1,6 +1,6 @@
 ---
 - name: copy script
-hosts: deployee_system
+- hosts: deployee_system
   tasks:    
    - name: Copy Remote-To-Remote
      synchronize: src=/root/scripts/loadtest.sh dest=/root/scripts/
