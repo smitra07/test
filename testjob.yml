@@ -1,13 +1,11 @@
 ---
 - name: copy script
-  hosts: webservers
-
+- hosts: source_system
   tasks:
-          - name: copying script file
-              copy:
-                src: "{{ item.src }}"
-                dest: "{{ item.dest }}"
-                remote_src: true
-              loop:
-                - {src: '/root/scripts/loadtest.sh', dest: '/root/scripts/'}
-              become: true
+  - name: transfer data from machine1 to machine2
+
+    copy:
+     src: /root/scripts/loadtest.sh
+     dest: /root/scripts/
+
+    delegate_to: deployee_system
