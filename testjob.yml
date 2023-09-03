@@ -1,6 +1,6 @@
 ---
 - name: copy script
-- hosts: source_system
+  hosts: source_system
   tasks:
     - name: Transfer file from ServerA to ServerB
       synchronize:
